@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/MainVC.swift"
-            timestampString = "583123061.168837"
+            timestampString = "583285343.151953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/Network/JSONBackend.swift"
-            timestampString = "583123061.169384"
+            timestampString = "583199587.33639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "networkRequest(_:parameters:jsonDataDidArrive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/Network/JSONBackend.swift"
-            timestampString = "583123061.169889"
+            timestampString = "583199587.336471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "networkRequest(_:parameters:jsonDataDidArrive:)"
             landmarkType = "7">
             <Locations>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/Network/JSONBackend.swift"
-            timestampString = "583123061.170325"
+            timestampString = "583199587.33653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "networkRequest(_:parameters:jsonDataDidArrive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/Model/NewsModel.swift"
-            timestampString = "583123061.170742"
+            timestampString = "583285343.152817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/Network/JSONBackend.swift"
-            timestampString = "583123061.170837"
+            timestampString = "583199587.337039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "networkRequest(_:parameters:jsonDataDidArrive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/MainVC.swift"
-            timestampString = "583123061.171489"
+            timestampString = "583285343.153416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -150,15 +150,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/DetailVC.swift"
-            timestampString = "583123061.171959"
+            timestampString = "583285343.153906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/DetailVC.swift"
-            timestampString = "583123061.172642"
+            timestampString = "583285343.155617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "backbuttonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -182,15 +182,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/DetailVC.swift"
-            timestampString = "583123072.700016"
+            timestampString = "583285343.157231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -198,27 +198,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsFeed/ViewControllers/MainVC.swift"
-            timestampString = "583123078.177852"
+            timestampString = "583285343.1591181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewsFeed.MainVC.prepare(for: __C.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "NewsFeed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gokulnarasimhan/Custom/NewsFeed/NewsFeed/ViewControllers/MainVC.swift"
-                  timestampString = "583123078.387581"
+                  timestampString = "583150530.097082"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -226,14 +226,14 @@
                   offsetFromSymbolStart = "1841">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in NewsFeed.MainVC.prepare(for: __C.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "NewsFeed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gokulnarasimhan/Custom/NewsFeed/NewsFeed/ViewControllers/MainVC.swift"
-                  timestampString = "583123078.389411"
+                  timestampString = "583150530.099238"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -246,16 +246,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsFeed/ViewControllers/MainVC.swift"
-            timestampString = "583123092.3035949"
+            filePath = "NewsFeed/Model/NewsModel.swift"
+            timestampString = "583285343.160293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "valueFromSection(_:atIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

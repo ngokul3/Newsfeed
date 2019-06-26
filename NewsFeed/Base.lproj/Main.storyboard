@@ -88,15 +88,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-DY-ncw">
-                                <rect key="frame" x="182" y="106" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="8PK-H5-u5E"/>
-                                    <constraint firstAttribute="height" constant="50" id="RB5-jJ-2l6"/>
-                                </constraints>
-                            </imageView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aG-MD-nau">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="202" width="414" height="660"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -109,29 +102,55 @@
                                     <navigationItem title="Title" id="IBm-Pa-Odh">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="W8q-az-KWc">
                                             <connections>
-                                                <action selector="backbuttonClicked:" destination="55a-QH-orH" id="hgr-T5-07X"/>
+                                                <action selector="backbuttonClicked:" destination="55a-QH-orH" id="u5L-HP-lMq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ6-gg-5hH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="106"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f2k-DB-TMw">
+                                        <rect key="frame" x="87" y="0.0" width="240" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="ZZW-LG-pSU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="f2k-DB-TMw" firstAttribute="height" secondItem="HJ6-gg-5hH" secondAttribute="height" id="C05-vs-oFZ"/>
+                                    <constraint firstItem="f2k-DB-TMw" firstAttribute="centerX" secondItem="HJ6-gg-5hH" secondAttribute="centerX" id="Osv-HM-ato"/>
+                                    <constraint firstAttribute="height" constant="106" id="fkj-eY-IqV"/>
+                                    <constraint firstItem="f2k-DB-TMw" firstAttribute="top" secondItem="HJ6-gg-5hH" secondAttribute="top" id="fmV-GR-mBl"/>
+                                    <constraint firstItem="f2k-DB-TMw" firstAttribute="height" secondItem="HJ6-gg-5hH" secondAttribute="height" id="jhw-n3-Jsl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OHx-DY-ncw" firstAttribute="centerX" secondItem="aCK-Nw-5VH" secondAttribute="centerX" id="70y-1L-ItL"/>
+                            <constraint firstItem="HJ6-gg-5hH" firstAttribute="leading" secondItem="6vg-ss-BqZ" secondAttribute="leading" id="5eP-Vo-bgb"/>
                             <constraint firstItem="6vg-ss-BqZ" firstAttribute="trailing" secondItem="aCK-Nw-5VH" secondAttribute="trailing" id="A1T-Xc-Cac"/>
-                            <constraint firstItem="OHx-DY-ncw" firstAttribute="top" secondItem="6vg-ss-BqZ" secondAttribute="bottom" constant="18" id="L50-zd-TgF"/>
+                            <constraint firstItem="HJ6-gg-5hH" firstAttribute="top" secondItem="6vg-ss-BqZ" secondAttribute="bottom" id="Ksd-Ij-2fg"/>
+                            <constraint firstItem="1aG-MD-nau" firstAttribute="bottom" secondItem="aCK-Nw-5VH" secondAttribute="bottom" id="SY7-Ln-hHo"/>
+                            <constraint firstItem="1aG-MD-nau" firstAttribute="leading" secondItem="aCK-Nw-5VH" secondAttribute="leading" id="e28-5q-vOs"/>
                             <constraint firstItem="6vg-ss-BqZ" firstAttribute="leading" secondItem="aCK-Nw-5VH" secondAttribute="leading" id="i8n-sZ-mgv"/>
+                            <constraint firstItem="1aG-MD-nau" firstAttribute="trailing" secondItem="aCK-Nw-5VH" secondAttribute="trailing" id="iYm-BT-AS7"/>
                             <constraint firstItem="6vg-ss-BqZ" firstAttribute="top" secondItem="aCK-Nw-5VH" secondAttribute="top" id="jNc-br-Wi8"/>
-                            <constraint firstItem="1aG-MD-nau" firstAttribute="top" secondItem="OHx-DY-ncw" secondAttribute="bottom" constant="10" id="lc2-As-xas"/>
+                            <constraint firstItem="1aG-MD-nau" firstAttribute="top" secondItem="HJ6-gg-5hH" secondAttribute="bottom" constant="8" id="m6F-yn-kYZ"/>
                             <constraint firstItem="aCK-Nw-5VH" firstAttribute="bottom" secondItem="1aG-MD-nau" secondAttribute="bottom" id="ogR-XG-chh"/>
                             <constraint firstItem="1aG-MD-nau" firstAttribute="leading" secondItem="aCK-Nw-5VH" secondAttribute="leading" id="slg-hz-NCa"/>
+                            <constraint firstItem="HJ6-gg-5hH" firstAttribute="trailing" secondItem="6vg-ss-BqZ" secondAttribute="trailing" id="uhu-CV-GHs"/>
                             <constraint firstItem="aCK-Nw-5VH" firstAttribute="trailing" secondItem="1aG-MD-nau" secondAttribute="trailing" id="xk5-dV-UhK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aCK-Nw-5VH"/>
                     </view>
                     <connections>
-                        <outlet property="newsImage" destination="OHx-DY-ncw" id="LbC-rm-EjV"/>
+                        <outlet property="hieghtConstraint" destination="fkj-eY-IqV" id="GWJ-N7-LvY"/>
+                        <outlet property="imageView" destination="HJ6-gg-5hH" id="9Tx-Wy-B6v"/>
+                        <outlet property="navigationBar" destination="6vg-ss-BqZ" id="qfZ-Qv-Xcg"/>
+                        <outlet property="newsImage" destination="f2k-DB-TMw" id="Tvz-nS-fbW"/>
                         <outlet property="webView" destination="1aG-MD-nau" id="wPk-XB-N1h"/>
                     </connections>
                 </viewController>
@@ -142,7 +161,6 @@
         <!--Navigation Controller-->
         <scene sceneID="UZa-f5-nCU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="if1-zx-JnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="519-f7-ALW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Xf-UT-JH3">
@@ -154,6 +172,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ED7-Rg-5zT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="if1-zx-JnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="778.79464285714278"/>
         </scene>

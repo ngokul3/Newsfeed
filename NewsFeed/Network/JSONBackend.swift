@@ -9,25 +9,6 @@
 import Foundation
 
 class JSONBackEnd: HTTPBackEnd {
-//    func encodeKeyOrVal(_ kv: Any) -> String {
-//        let querySeparators = CharacterSet(charactersIn: "=?")
-//        let allowedCharacters = CharacterSet.urlQueryAllowed.subtracting(querySeparators)
-//        return "\(kv)".addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? "ENCODING_ERROR_INVALID_UNICODE"
-//        // https://stackoverflow.com/questions/33558933/why-is-the-return-value-of-string-addingpercentencoding-optional
-//    }
-//
-//
-//    func encodeDict(_ vals: [String: Any]) -> String {
-//        let result = Array(vals.keys).reduce("") {
-//            (accumulator, key) in
-//            let prefix = (accumulator == "") ? "?" : "&"
-//            return "\(accumulator)\(prefix)\(encodeKeyOrVal(key as Any))=\(encodeKeyOrVal(vals[key]!))"
-//        }
-//        return result
-//    }
-    
-    
-    
        func networkRequest(_ url: URL,
                      parameters: [String: Any],
                      jsonDataDidArrive: @escaping (_ dataDict: NSDictionary?, _ errorMsg: String?) -> ()) {

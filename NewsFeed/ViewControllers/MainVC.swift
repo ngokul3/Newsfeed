@@ -2,10 +2,10 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+    var loadImageForChild: ((NSInteger, UIImageView)->Void)?
     @IBOutlet weak var tableView: UITableView!
     private let model: NewsListDataSource = NewsListModel()
-    let imageCache = NSCache<AnyObject, AnyObject>()
+    var imageCache = NSCache<AnyObject, NSData>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +19,12 @@ class MainVC: UIViewController {
 }
 
 extension MainVC:UITableViewDataSource, UITableViewDelegate{
+   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return model.numSections()
     }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,44 +32,66 @@ extension MainVC:UITableViewDataSource, UITableViewDelegate{
             preconditionFailure("Incorrect Cell provided")
         }
         
+        if let imageFromCache = self.imageCache.object(forKey: (indexPath.row ) as AnyObject) {
+            cell.thumbnailImage.image = UIImage(data: imageFromCache as Data)
+            return cell
+        }else{
+            cell.thumbnailImage.image = nil
+        }
+        
         if let newsObj = model.valueFromSection(indexPath.section, atIndex: indexPath.row){
-           cell.titleLabel.text = newsObj.title
-            
+            cell.titleLabel.text = newsObj.title
+          
             if let iconURL = newsObj.imageURL{
-                model.getImage(iconURL: iconURL, imageLoaded: {[weak self] (data, responseOpt, error) in
-                    if let e = error {
-                        print("Error downloading icon: \(e)")
-                        //Take custom actions
-                    }else{
-                        if let response = responseOpt {
-                            
-                            if let imageData = data {
-                                OperationQueue.main.addOperation {
-                                    if let iconImage = UIImage(data: imageData){
-                                        self?.imageCache.setObject(iconImage, forKey: (iconURL) as AnyObject)
-                                        OperationQueue.main.addOperation {
-                                             cell.thumbnailImage.image = UIImage(data: imageData)
+                
+                model.getImage(iconURL: iconURL) {[weak self] (data,response,error) in
+                    OperationQueue.main.addOperation {
+                        if let e = error {
+                            print("HTTP request failed: \(e.localizedDescription)")
+                            cell.thumbnailImage.image = nil
+                        }
+                        else{
+                            if let httpResponse = response {
+                                print("http response code: \(httpResponse.statusCode)")
+                                
+                                let HTTP_OK = 200
+                                if(httpResponse.statusCode == HTTP_OK ){
+                                    
+                                    if let imageData = data,
+                                        let image = UIImage(data: imageData){
+                                        print("urlArrivedCallback operation: Now on thread: \(Thread.current)")
+                                            cell.thumbnailImage.image = image
+                                            self?.imageCache.setObject(imageData as NSData, forKey: (indexPath.row) as AnyObject)
+                                            tableView.reloadRows(at: [indexPath], with: .none)
+                                            self?.loadImageForChild = {(arg1, arg2) in
+                                                if(arg1 == indexPath.row){
+                                                    arg2.image = image
+                                                }
                                         }
                                     }
-                                   
+                                    else{
+                                        cell.thumbnailImage.image = nil
+                                        print("Image data not available")
+                                    }
                                 }
-                                
+                                else{
+                                    cell.thumbnailImage.image = nil
+                                    print("HTTP Error \(httpResponse.statusCode)")
+                                }
                             }
-                            else {
-                                print(response)
+                            else{
+                                cell.thumbnailImage.image = nil
+                                print("Can't parse imageresponse")
                             }
-                        }
-                        else {
-                            print(error.debugDescription)
                         }
                     }
-                })
+                }
+            }else{
+                cell.thumbnailImage.image = nil
             }
-            
         }
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          guard let numRows = model.numElementsInSection(section) else {
@@ -98,16 +123,16 @@ extension MainVC{
         }
         
         do{
-            if let newsFeed = model.valueFromSection(0, atIndex: indexPath.row){
-                vc.newsURL = newsFeed.newsURL
+            if let newsFeed = model.valueFromSection(indexPath.section, atIndex: indexPath.row){
+                vc.newsObj = newsFeed
                 vc.loadImage = {[weak self] in
-                    
-                    if let imageFromCache = self?.imageCache.object(forKey: (newsFeed.newsURL ?? "" ) as AnyObject) as? UIImage{
-                        OperationQueue.main.addOperation {
-                            vc.newsImage.image = imageFromCache
+                     OperationQueue.main.addOperation {
+                        if let imageFromCache = self?.imageCache.object(forKey: (indexPath.row ) as AnyObject) {
+                                vc.newsImage.image = UIImage(data:imageFromCache as Data)
+                        }else{
+                            self?.loadImageForChild?(indexPath.row, vc.newsImage)
+                            vc.hieghtConstraint.constant = 0
                         }
-                    }else{
-                        
                     }
                 }
             }

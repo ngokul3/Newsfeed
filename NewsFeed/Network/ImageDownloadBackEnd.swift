@@ -14,8 +14,7 @@ class ImageDownloadBackEnd: HTTPBackEnd{
         if let teamIconURL = URL(string: iconURL)
         {
             let downloadPicTask = session.dataTask(with: teamIconURL) { (data, responseOpt, error) in
-                if let e = error {
-                    print("Error downloading cat picture: \(e)")
+                if let _ = error {
                 }
                 else {
                     if let response = responseOpt as? HTTPURLResponse {

@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
+
 class NewsViewCell: UITableViewCell{
     
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+
 }
+
+
+
