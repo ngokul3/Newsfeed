@@ -32,20 +32,22 @@ extension MainVC:UITableViewDataSource, UITableViewDelegate{
             preconditionFailure("Incorrect Cell provided")
         }
         
-        if let imageFromCache = self.imageCache.object(forKey: (indexPath.row ) as AnyObject) {
-            cell.thumbnailImage.image = UIImage(data: imageFromCache as Data)
-            return cell
-        }else{
-            cell.thumbnailImage.image = nil
-        }
+        
         
         if let newsObj = model.valueFromSection(indexPath.section, atIndex: indexPath.row){
             cell.titleLabel.text = newsObj.title
           
             if let iconURL = newsObj.imageURL{
-                
+                if let imageFromCache = self.imageCache.object(forKey: (indexPath.row ) as AnyObject) {
+                    cell.thumbnailImage.image = UIImage(data: imageFromCache as Data)
+                    
+                    return cell
+                }else{
+                    cell.thumbnailImage.image = nil
+                }
                 model.getImage(iconURL: iconURL) {[weak self] (data,response,error) in
                     OperationQueue.main.addOperation {
+                        
                         if let e = error {
                             print("HTTP request failed: \(e.localizedDescription)")
                             cell.thumbnailImage.image = nil
